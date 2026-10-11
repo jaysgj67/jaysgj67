@@ -25,14 +25,15 @@ python3 -m http.server 8000
 
 替换完成后删除各处的「示例」标签与 `sample-note` 提示。
 
-## 部署（GitHub Pages）
+## 部署（GitHub Pages · 已完成）
 
-1. 在 GitHub 新建仓库（建议公开），例如 `personal-site`。
-2. 推送本目录代码到该仓库 `main` 分支（`.github/workflows/pages.yml` 会自动部署）。
-3. 到仓库 **Settings → Pages**，确认 Source 为 **GitHub Actions**。
-4. 访问 `https://jaysgj67-netizen.github.io/personal-site/`。
+本站已部署：<https://jaysgj67.github.io/jaysgj67/>
 
-> 若希望用 `https://jaysgj67-netizen.github.io` 作为根域名，把仓库改名为 `jaysgj67-netizen.github.io` 即可。
+- 仓库：`jaysgj67/jaysgj67`（公开）
+- 方式：**Settings → Pages → Source: Deploy from a branch（main / root）**
+- 更新：本地改完内容后 `git push origin main`，Pages 会自动重新构建，约 1 分钟内生效。
+
+> 当前站点内文字均为「示例」占位（带 `sample-note` 提示），替换内容见上表。
 
 ## 技术说明
 
