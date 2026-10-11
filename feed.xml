@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>你的名字 · 手记</title>
+  <link>https://jaysgj67-netizen.github.io/personal-site/</link>
+  <description>日常、周报与年报的个人手记</description>
+  <language>zh-cn</language>
+  <lastBuildDate>Mon, 11 Oct 2026 16:00:00 GMT</lastBuildDate>
+  <!-- TODO: 每发一篇新记录，复制一条 <item> 并更新日期、标题、链接 -->
+  <item>
+    <title>第 40 周：本周完成事项与下周计划</title>
+    <link>https://jaysgj67-netizen.github.io/personal-site/</link>
+    <guid>journal-2026-10-05</guid>
+    <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title>2025 年度回顾：写了 X 篇手记，完成 Y 个项目</title>
+    <link>https://jaysgj67-netizen.github.io/personal-site/</link>
+    <guid>annual-2025</guid>
+    <pubDate>Mon, 21 Sep 2026 00:00:00 GMT</pubDate>
+  </item>
+</channel>
+</rss>
