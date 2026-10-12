@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>私募策略全景：量化多头、指增、多策略、CTA、量化对冲，时序/截面与行业轮动 · 简传旺</title>
+<meta name="description" content="私募五大策略逐一拆解：量化多头、量化指增、多策略、CTA、量化对冲；时序策略与截面策略的区别；A股行业轮动规律与策略业绩周期。">
+<style>
+  :root {
+    --text: #1A1B1C;
+    --text2: #6B7280;
+    --bg: #FAF7F2;
+    --card: #FFFFFF;
+    --line: #E4E3DD;
+    --pink: #E88FB0;
+    --sage: #7FB8A0;
+    --mustard: #E2C58C;
+    --blue: #9BBBF4;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Noto Serif SC", "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+    padding: 24px 16px 48px;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; }
+  .toplink { display: inline-block; font-size: 13px; color: var(--text2); text-decoration: none; margin-bottom: 18px; }
+  h1 { font-size: 25px; font-weight: 700; line-height: 1.45; margin-bottom: 10px; }
+  .meta { font-size: 13px; color: var(--text2); margin-bottom: 28px; }
+  h2 { font-size: 19px; font-weight: 600; margin: 34px 0 12px; padding-left: 12px; border-left: 4px solid var(--sage); }
+  h3 { font-size: 15px; font-weight: 600; margin: 18px 0 8px; }
+  p { font-size: 14.5px; margin-bottom: 12px; }
+  ul { margin: 0 0 12px 20px; }
+  li { font-size: 14.5px; margin-bottom: 6px; }
+  strong { font-weight: 600; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px; margin: 14px 0; }
+  .keybox { background: rgba(127, 184, 160, 0.10); border-left: 4px solid var(--sage); padding: 12px 14px; border-radius: 0 10px 10px 0; margin: 16px 0; font-size: 14.5px; }
+  .chart-svg svg { width: 100%; height: auto; display: block; margin: 8px 0 4px; }
+  .caption { font-size: 12px; color: var(--text2); margin-bottom: 8px; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
+  th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; }
+  th { background: #F3F0E9; font-weight: 600; }
+  .sources { font-size: 12px; color: var(--text2); margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); }
+  .disclaimer { font-size: 12px; color: var(--text2); margin-top: 14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="toplink" href="./">← 返回主页</a>
+  <h1>私募策略全景：量化多头、指增、多策略、CTA、量化对冲，时序/截面与行业轮动</h1>
+  <div class="meta">简传旺 · 2026.10 · 私募策略研究笔记 · 数据基于私募排排网、券商研报及权威媒体报道</div>
+
+  <div class="keybox">
+    <strong>摘要</strong>：私募策略不是一个"策略"，而是五大家族——量化多头、量化指增、多策略、CTA、量化对冲（市场中性），每个家族下还有细分。本文先给出策略全景图谱，再逐一拆解每类策略的运作逻辑与收益来源；重点讲清两个常被混淆的概念：<strong>时序策略</strong>（看单一品种自己的"进退"）与<strong>截面策略</strong>（比多品种之间的"好坏"）；最后梳理 A股行业怎么轮动、策略业绩的周期规律，以及不同市场环境下谁占优。
+  </div>
+
+  <h2>一、策略全景：五大家族</h2>
+  <p>私募证券策略按收益来源可以分为五大家族：赚"市场上涨"的钱（主观多头/量化多头）、赚"指数贝塔+超额阿尔法"的钱（指增）、赚"多策略低相关叠加"的钱（多策略）、赚"商品与期货趋势/价差"的钱（CTA）、赚"剥离贝塔后的纯超额"的钱（量化对冲/市场中性）。先看全景图：</p>
+  <div class="card">
+    <svg viewBox="0 0 660 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="私募证券策略全景分类图">
+<rect x="250.0" y="14" width="160" height="30" rx="15" fill="#1A1B1C"/>
+<text x="330.0" y="33" text-anchor="middle" font-size="13" font-weight="600" fill="#fff">私募证券策略</text>
+<line x1="70.0" y1="44" x2="70.0" y2="58" stroke="#C9C5BA" stroke-width="1.5"/>
+<rect x="11.0" y="58" width="118" height="28" rx="8" fill="#9BBBF4"/>
+<text x="70.0" y="76" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1B1C">量化多头</text>
+<rect x="19.0" y="100" width="102" height="22" rx="6" fill="#FAF8F2" stroke="#E4E3DD" stroke-width="1"/>
+<text x="70.0" y="115" text-anchor="middle" font-size="10.5" fill="#444">全市场选股</text>
+<rect x="19.0" y="128" width="102" height="22" rx="6" fill="#FAF8F2" stroke="#E4E3DD" stroke-width="1"/>
+<text x="70.0" y="143" text-anchor="middle" font-size="10.5" fill="#444">空气指增</text>
+<rect x="19.0" y="156" width="102" height="22" rx="6" fill="#FAF8F2" stroke="#E4E3DD" stroke-width="1"/>
+<text x="70.0" y="171" text-anchor="middle" font-size="10.5" fill="#444">择时选股</text>
+<line x1="200.0" y1="44" x2="200.0" y2="58" stroke="#C9C5BA" stroke-width="1.5"/>
+<rect x="141.0" y="58" width="118" height="28" rx="8" fill="#7FB8A0"/>
+<text x="200.0" y="76" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1B1C">量化指增</text>
+<rect x="149.0" y="100" width="102" height="22" rx="6" fill="#FAF8F2" stroke="#E4E3DD" stroke-width="1"/>
+<text x="200.0" y="115" text-anchor="middle" font-size="10.5" fill="#444">沪深300</text>
+<rect x="149.0" y="128" width="102" height="22" rx="6" fill="#FAF8F2" stroke="#E4E3DD" stroke-width="1"/>
+<text x="200.0" y="143" text-anchor="middle" font-size="10.5" fill="#444">中证500</text>
+<rect x="149.0" y="156" width="102" height="22" rx="6" fill="#FAF8F2" stroke="#E4E3DD" stroke-width="1"/>
+<text x="200.0" y="171" text-anchor="middle" font-size="10.5" fill="#444">中证1000</text>
+<rect x="149.0" y="184" width="102" height="22" rx="6" fill="#FAF8F2" stroke="#E4E3DD" stroke-width="1"/>
+<text x="200.0" y="199" text-anchor="middle" font-size="10.5" fill="#444">中证2000/A500</text>
+<line x1="330.0" y1="44" x2="330.0" y2="58" stroke="#C9C5BA" stroke-width="1.5"/>
+<rect x="271.0" y="58" width="118" height="28" rx="8" fill="#E2C58C"/>
+<text x="330.0" y="76" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1B1C">多策略</text>
+<rect x="279.0" y="100" width="102" height="22" rx="6" fill="#FAF8F2" stroke="#E4E3DD" stroke-width="1"/>
+<text x="330.0" y="115" text-anchor="middle" font-size="10.5" fill="#444">多资产</text>
+<rect x="279.0" y="128" width="102" height="22" rx="6" fill="#FAF8F2" stroke="#E4E3DD" stroke-width="1"/>
+<text x="330.0" y="143" text-anchor="middle" font-size="10.5" fill="#444">全天候</text>
+<line x1="460.0" y1="44" x2="460.0" y2="58" stroke="#C9C5BA" stroke-width="1.5"/>
+<rect x="401.0" y="58" width="118" height="28" rx="8" fill="#F4B393"/>
+<text x="460.0" y="76" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1B1C">CTA</text>
+<rect x="409.0" y="100" width="102" height="22" rx="6" fill="#FAF8F2" stroke="#E4E3DD" stroke-width="1"/>
+<text x="460.0" y="115" text-anchor="middle" font-size="10.5" fill="#444">时序趋势</text>
+<rect x="409.0" y="128" width="102" height="22" rx="6" fill="#FAF8F2" stroke="#E4E3DD" stroke-width="1"/>
+<text x="460.0" y="143" text-anchor="middle" font-size="10.5" fill="#444">截面多空</text>
+<rect x="409.0" y="156" width="102" height="22" rx="6" fill="#FAF8F2" stroke="#E4E3DD" stroke-width="1"/>
+<text x="460.0" y="171" text-anchor="middle" font-size="10.5" fill="#444">套利</text>
+<rect x="409.0" y="184" width="102" height="22" rx="6" fill="#FAF8F2" stroke="#E4E3DD" stroke-width="1"/>
+<text x="460.0" y="199" text-anchor="middle" font-size="10.5" fill="#444">股指CTA</text>
+<line x1="590.0" y1="44" x2="590.0" y2="58" stroke="#C9C5BA" stroke-width="1.5"/>
+<rect x="531.0" y="58" width="118" height="28" rx="8" fill="#EAA7B2"/>
+<text x="590.0" y="76" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1B1C">量化对冲</text>
+<rect x="539.0" y="100" width="102" height="22" rx="6" fill="#FAF8F2" stroke="#E4E3DD" stroke-width="1"/>
+<text x="590.0" y="115" text-anchor="middle" font-size="10.5" fill="#444">市场中性</text>
+<rect x="539.0" y="128" width="102" height="22" rx="6" fill="#FAF8F2" stroke="#E4E3DD" stroke-width="1"/>
+<text x="590.0" y="143" text-anchor="middle" font-size="10.5" fill="#444">多空对冲</text>
+</svg>
+    <div class="caption">私募证券策略全景分类（示意）。括号内为 2025 年或近三年代表性收益口径，数据详见下文。</div>
+  </div>
+
+  <h2>二、五大策略逐个拆解</h2>
+
+  <h3>2.1 量化多头（全市场选股）</h3>
+  <p><strong>运作逻辑</strong>：把选股逻辑写成可计算的因子（量价、基本面、另类数据），用模型给全市场几千只股票打分排序，在风险约束下买入得分高的、规避得分低的，持仓通常几百到上千只，纪律化高频调仓。它不是"让机器猜涨跌"，而是把投资逻辑工程化，靠广度与纪律"积小胜为大胜"。</p>
+  <ul>
+    <li><strong>细分</strong>：全市场量化选股（不锚定指数）、空气指增（以全市场为基准的增强）、择时选股（叠加仓位择时）。</li>
+    <li><strong>2025年表现</strong>：量化多头产品平均收益39.51%、中位数42.04%，正收益占比95.81%，是当年股票策略中的领跑者（火富牛样本口径平均更高达52.54%）。</li>
+    <li><strong>适配环境</strong>：高成交、高波动、风格活跃、中小盘扩散的市场——换手越活跃，模型捕捉定价偏差的机会越多；2025年的中小盘强势行情就是典型。</li>
+  </ul>
+
+  <h3>2.2 量化指数增强</h3>
+  <p><strong>运作逻辑</strong>：锚定一个宽基指数（沪深300/中证500/中证1000/中证2000/中证A500），在复制指数贝塔的基础上，用模型主动偏离，力争跑赢指数。收益 = 指数涨跌（贝塔）+ 超额收益（阿尔法）两层。</p>
+  <ul>
+    <li><strong>指数细分</strong>：不同指数的贝塔来源不同——300是"大盘蓝筹"、500是"中盘成长"、1000/2000是"小盘/微盘"，小盘指数本身弹性大，叠加的超额空间也更大。</li>
+    <li><strong>2025年数据</strong>：指增产品平均回报45.08%、平均超额16.75%、正超额占比近九成；其中中证1000指增平均回报49.78%（超额17.49%）、中证500指增46.32%、沪深300指增31.22%（正超额占比最高97.14%但弹性有限）。</li>
+    <li><strong>超额从哪来</strong>：量价因子、基本面因子、另类数据（卫星图像、供应链、舆情）、T0日内交易、打新等；头部百亿指增2025年平均超额高达20.26%。</li>
+    <li><strong>风险</strong>：风格暴露（小市值/高波动）顺风时超额好看，风格反转时就是回撤来源——2026年7月中证500/1000指增单月负超额-4.62%/-2.57%、绝对收益回撤约18%—20%。</li>
+  </ul>
+
+  <h3>2.3 多策略（Multi-Strategy）</h3>
+  <p><strong>运作逻辑</strong>：在一个组合里装多条<strong>低相关</strong>的策略线（量化多头 + 市场中性 + CTA + 套利 + 宏观/多资产等），根据市场环境动态调配各策略权重。目的不是"押注单一策略"，而是让各策略盈亏不同步、互相平滑波动，追求更稳定的绝对回报。</p>
+  <ul>
+    <li>典型形态：多资产绝对回报型（股票+债券+黄金+商品，运用选股、交易、价值、小盘多子策略）；股票多头+指增+CTA的全天候型。</li>
+    <li><strong>适配</strong>：单一策略总有"失效期"，多策略以相关性换稳定性——2026年低利率+资产荒环境下，稳健理财需求推动"多资产多策略"产品成为行业新热点。</li>
+  </ul>
+
+  <h3>2.4 量化CTA</h3>
+  <p><strong>运作逻辑</strong>：在期货市场（90个品种：商品期货82个 + 股指/国债等金融期货）做多空双向交易，赚趋势、价差、展期的钱。与股票最大的不同是<strong>可以双向做空</strong>，且底层资产（商品受供需、天气、地缘驱动）与股债相关性极低（与沪深300、创业板相关系数仅0.15—0.23，与中债甚至负相关）。</p>
+  <ul>
+    <li><strong>四大收益来源</strong>：趋势跟踪（占比通常超60%，"涨了还会涨、跌了还会跌"）、套利（跨期/跨品种/跨市场价差回归）、展期收益（移仓换月）、多空双向+杠杆。</li>
+    <li><strong>危机Alpha</strong>：2008金融危机、2015股灾、2022俄乌冲突、2024 A股阴跌（当年私募CTA平均收益12.17%、领跑五大策略）中，CTA普遍逆势正收益——因为商品走出独立趋势，而CTA做多做空都能赚。</li>
+    <li><strong>2025年表现</strong>：量化CTA平均收益21.75%（低于量化多头但显著高于中性策略）；细分看时序量价11.80%、混合时序截面6.98%、跨品种套利6.38%、股指CTA 5.09%、截面多空2.44%（2025年前10月口径）。</li>
+    <li><strong>配置价值</strong>：与股债低相关 + 危机对冲，是组合的"稳定器"；均值-方差模型下夏普最大目标的CTA配置比例约为13%。但CTA波动不小，不是"固收替代"。</li>
+  </ul>
+
+  <h3>2.5 量化对冲 / 市场中性</h3>
+  <p><strong>运作逻辑</strong>：股票多头持仓 + 用股指期货（IF/IC/IM）或融券对冲掉市场涨跌，把组合的市场暴露（贝塔）压到接近零，只赚选股的超额收益（阿尔法）。定位是"低波动、绝对收益"。</p>
+  <ul>
+    <li><strong>2025年的"尴尬"</strong>：被当成"固收替代品"遭资金涌入，但基差贴水波动、融券余额下降导致对冲端集中在股指期货，产品波动率高达158.62%，年内平均收益仅9.42%——"收益平庸、波动加大"，部分私募暂停申购。</li>
+    <li><strong>真相</strong>：中性策略的风险收益特征只在部分环境下类似固收；基差成本与策略拥挤度决定了它的舒适区很窄。它适合作为组合的"对冲层"，而不是理财替代。</li>
+  </ul>
+
+  <h2>三、时序策略 vs 截面策略（重点）</h2>
+  <p>这两个词在CTA和量化里都高频出现，一句话区分：<strong>时序看"进退"（单品种跟自己的过去比），截面比"好坏"（多品种在同一时刻比相对强弱）</strong>。</p>
+  <div class="card">
+    <svg viewBox="0 0 660 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="时序策略与截面策略对比图">
+<text x="330.0" y="26" text-anchor="middle" font-size="15" font-weight="600" fill="#1A1B1C">时序策略 vs 截面策略</text>
+<rect x="14" y="44" width="306" height="286" rx="12" fill="rgba(244,179,147,0.14)"/>
+<text x="167.0" y="72" text-anchor="middle" font-size="14" font-weight="600" fill="#B55A2A">时序策略 · 看"进退"</text>
+<text x="167.0" y="92" text-anchor="middle" font-size="11" fill="#6B7280">趋势跟踪 | 均线·突破·时序动量</text>
+<text x="30" y="118" font-size="11.5" font-weight="600" fill="#1A1B1C">信号维度</text>
+<text x="110" y="118" font-size="11.5" fill="#444">单一品种自己的时间序列</text>
+<text x="30" y="148" font-size="11.5" font-weight="600" fill="#1A1B1C">赚什么钱</text>
+<text x="110" y="148" font-size="11.5" fill="#444">单边趋势的持续</text>
+<text x="30" y="178" font-size="11.5" font-weight="600" fill="#1A1B1C">最佳环境</text>
+<text x="110" y="178" font-size="11.5" fill="#444">高波动、趋势明朗</text>
+<text x="30" y="208" font-size="11.5" font-weight="600" fill="#1A1B1C">最差环境</text>
+<text x="110" y="208" font-size="11.5" fill="#444">横盘震荡（反复止损）</text>
+<text x="30" y="238" font-size="11.5" font-weight="600" fill="#1A1B1C">风险特征</text>
+<text x="110" y="238" font-size="11.5" fill="#444">波动高、回撤大、长期收益更高</text>
+<polyline points="44,300 94,278 144,290 194,258 244,270 294,240" fill="none" stroke="#F4B393" stroke-width="2.5"/>
+<text x="167.0" y="326" text-anchor="middle" font-size="10.5" fill="#6B7280">一根价格，跟它自己比</text>
+<rect x="340" y="44" width="306" height="286" rx="12" fill="rgba(155,187,244,0.14)"/>
+<text x="493.0" y="72" text-anchor="middle" font-size="14" font-weight="600" fill="#3A5BA8">截面策略 · 比"好坏"</text>
+<text x="493.0" y="92" text-anchor="middle" font-size="11" fill="#6B7280">多空对冲 | 截面动量·期限结构</text>
+<text x="356" y="118" font-size="11.5" font-weight="600" fill="#1A1B1C">信号维度</text>
+<text x="436" y="118" font-size="11.5" fill="#444">同一时刻多品种相对强弱</text>
+<text x="356" y="148" font-size="11.5" font-weight="600" fill="#1A1B1C">赚什么钱</text>
+<text x="436" y="148" font-size="11.5" fill="#444">强弱分化与回归</text>
+<text x="356" y="178" font-size="11.5" font-weight="600" fill="#1A1B1C">最佳环境</text>
+<text x="436" y="178" font-size="11.5" fill="#444">震荡市、品种分化</text>
+<text x="356" y="208" font-size="11.5" font-weight="600" fill="#1A1B1C">最差环境</text>
+<text x="436" y="208" font-size="11.5" fill="#444">全市场同涨同跌</text>
+<text x="356" y="238" font-size="11.5" font-weight="600" fill="#1A1B1C">风险特征</text>
+<text x="436" y="238" font-size="11.5" fill="#444">波动低、回撤小、弹性有限</text>
+<rect x="390" y="260" width="18" height="8" rx="3" fill="#9BBBF4"/>
+<rect x="430" y="256" width="18" height="12" rx="3" fill="#9BBBF4"/>
+<rect x="470" y="262" width="18" height="6" rx="3" fill="#9BBBF4"/>
+<rect x="510" y="258" width="18" height="10" rx="3" fill="#9BBBF4"/>
+<rect x="550" y="261" width="18" height="7" rx="3" fill="#9BBBF4"/>
+<text x="493.0" y="326" text-anchor="middle" font-size="10.5" fill="#6B7280">多品种排序：做多强的、做空弱的</text>
+<circle cx="327" cy="187" r="18" fill="#1A1B1C"/>
+<text x="327" y="193" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">VS</text>
+</svg>
+    <div class="caption">时序 vs 截面：数据维度与获利逻辑对比（示意）。</div>
+  </div>
+  <table>
+    <tr><th>对比维度</th><th>时序策略（趋势跟踪）</th><th>截面策略（强弱对冲）</th></tr>
+    <tr><td>信号基础</td><td>单一品种自己的时间序列（过去涨→做多，过去跌→做空）</td><td>同一时点多品种排序（做多得分高的，做空得分低的）</td></tr>
+    <tr><td>典型玩法</td><td>均线、通道突破、时序动量</td><td>截面动量、截面价值、期限结构斜率</td></tr>
+    <tr><td>赚什么钱</td><td>单边趋势的持续（趋势延续）</td><td>品种间相对强弱的分化与回归</td></tr>
+    <tr><td>市场敞口</td><td>可能整体做多或做空（有方向性敞口）</td><td>多空对冲，近似市场中性</td></tr>
+    <tr><td>最佳环境</td><td>高波动、趋势明朗的单边行情</td><td>震荡市、品种间分化明显的结构性行情</td></tr>
+    <tr><td>最差环境</td><td>横盘震荡（频繁止损磨损）</td><td>全市场同涨同跌（强弱差收窄）</td></tr>
+    <tr><td>风险特征</td><td>波动高、回撤大，但长期收益更高</td><td>波动低、回撤小，收益弹性有限</td></tr>
+  </table>
+  <p><strong>实证数据</strong>（2023.4—2026.3，国联期货私募指数）：量化趋势CTA累计收益41.53%（最大回撤-4.32%），量化截面CTA累计19.74%（回撤-2.35%），量化套利CTA累计22.71%（回撤-2.09%），同期南华商品指数36.91%（回撤-14.28%）。4个年份中3年趋势CTA收益最高——<strong>时序类长期收益更优，但回撤也更大</strong>。</p>
+  <p><strong>行情适配的"波动分型"</strong>：时序波动（单品种价格持续放大、趋势连续，如原油连续数周大涨）是时序CTA的"蜜糖"；截面波动（品种间强弱分化拉大）是截面策略的土壤。地缘冲击下若全市场同向波动（能化链集体走强），强弱差收窄，截面策略盈利空间被压缩。头部机构通常时序、截面各占约50%风险权重，让两类行情错峰互补。</p>
+
+  <h2>四、行业轮动：A股的资金迁徙规律</h2>
+  <p>行业轮动不是玄学，而是宏观流动性、信用周期、库存周期与产业生命周期咬合的"时钟"。</p>
+  <h3>4.1 宏观轮动：美林时钟</h3>
+  <div class="card">
+    <svg viewBox="0 0 660 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="美林时钟行业轮动四阶段示意图">
+<text x="330.0" y="28" text-anchor="middle" font-size="15" font-weight="600" fill="#1A1B1C">美林时钟：宏观轮动 → 板块轮动</text>
+<text x="330.0" y="48" text-anchor="middle" font-size="11" fill="#6B7280">按 经济+通胀 双维度，资金在资产与板块间周期迁徙</text>
+<circle cx="198" cy="76" r="120" fill="#EAA7B2" opacity="0.18"/>
+<circle cx="198" cy="76" r="120" fill="none" stroke="#EAA7B2" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="198" y="50" text-anchor="middle" font-size="16" font-weight="700" fill="#1A1B1C">④ 衰退</text>
+<text x="198" y="74" text-anchor="middle" font-size="12" font-weight="600" fill="#333">占优：债券·现金</text>
+<text x="198" y="96" text-anchor="middle" font-size="11.5" fill="#555">板块：防御·医药·红利</text>
+<text x="198" y="118" text-anchor="middle" font-size="10" fill="#888">（A股映射）</text>
+<circle cx="330" cy="76" r="120" fill="#7FB8A0" opacity="0.18"/>
+<circle cx="330" cy="76" r="120" fill="none" stroke="#7FB8A0" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="330" y="50" text-anchor="middle" font-size="16" font-weight="700" fill="#1A1B1C">① 复苏</text>
+<text x="330" y="74" text-anchor="middle" font-size="12" font-weight="600" fill="#333">占优：股票</text>
+<text x="330" y="96" text-anchor="middle" font-size="11.5" fill="#555">板块：消费·科技·金融</text>
+<text x="330" y="118" text-anchor="middle" font-size="10" fill="#888">（A股映射）</text>
+<circle cx="330" cy="208" r="120" fill="#F4B393" opacity="0.18"/>
+<circle cx="330" cy="208" r="120" fill="none" stroke="#F4B393" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="330" y="182" text-anchor="middle" font-size="16" font-weight="700" fill="#1A1B1C">② 过热</text>
+<text x="330" y="206" text-anchor="middle" font-size="12" font-weight="600" fill="#333">占优：商品</text>
+<text x="330" y="228" text-anchor="middle" font-size="11.5" fill="#555">板块：有色·能源·化工</text>
+<text x="330" y="250" text-anchor="middle" font-size="10" fill="#888">（A股映射）</text>
+<circle cx="198" cy="208" r="120" fill="#9BBBF4" opacity="0.18"/>
+<circle cx="198" cy="208" r="120" fill="none" stroke="#9BBBF4" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="198" y="182" text-anchor="middle" font-size="16" font-weight="700" fill="#1A1B1C">③ 滞胀</text>
+<text x="198" y="206" text-anchor="middle" font-size="12" font-weight="600" fill="#333">占优：现金·短债</text>
+<text x="198" y="228" text-anchor="middle" font-size="11.5" fill="#555">板块：必选消费·高股息</text>
+<text x="198" y="250" text-anchor="middle" font-size="10" fill="#888">（A股映射）</text>
+<circle cx="330" cy="208" r="42" fill="#1A1B1C"/>
+<text x="330" y="200" text-anchor="middle" font-size="12" font-weight="600" fill="#fff">经济周期</text>
+<text x="330" y="220" text-anchor="middle" font-size="10" fill="#ddd">增长×通胀</text>
+<path d="M 435 200 L 338 103" stroke="#C9C5BA" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+<path d="M 435 216 L 338 313" stroke="#C9C5BA" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#C9C5BA"/></marker></defs>
+<text x="330.0" y="386" text-anchor="middle" font-size="11" fill="#6B7280">轮动方向（顺时针）：衰退→复苏→过热→滞胀，A股板块随之从成长→消费→周期→防御迁徙</text>
+</svg>
+    <div class="caption">美林时钟四阶段与占优资产/板块（示意）。复苏期股票占优、过热期商品占优，A股板块随之轮动。</div>
+  </div>
+  <ul>
+    <li><strong>衰退</strong>：央行降息放水，债券先行，对流动性敏感的科技成长股率先见底反弹；</li>
+    <li><strong>复苏</strong>：经济回暖、盈利兑现，股票（消费、科技）主升；</li>
+    <li><strong>过热</strong>：通胀抬头，大宗商品（有色、能源、化工）量价齐升，周期股爆发；</li>
+    <li><strong>滞胀</strong>：加息收紧，高估值科技与高位周期双杀，资金撤向必选消费、医药、高股息防御。</li>
+  </ul>
+  <h3>4.2 A股典型轮动路径："货币→工业→消费"</h3>
+  <p>复盘近二十年，A股有一条清晰的<strong>"贵金属→铜铝→能源化工→消费"</strong>递进路径：流动性宽松先放大黄金金融属性（本轮2024年2月启动，金价从2000美元涨至5200美元/盎司，涨幅超150%）；随后工业金属接棒（铜铝2025年9月进入上升通道）；再传导至能源化工（2025年12月原油见底反弹约20%）；PPI转正向CPI传导后，消费板块迎来重估（市场预期2026年下半年切换）。</p>
+  <h3>4.3 板块轮动节奏：牛市"四幕剧"</h3>
+  <ul>
+    <li>复盘A股历次牛市：<strong>"启动打底→主线主升→扩散补涨→收尾落幕"</strong>。2005—2007年金融周期打底→消费白马主升→钢铁煤炭补涨；2014—2015年券商启动→TMT主升→银行低价股补涨；2019—2021年消费新能源主升→军工周期补涨。</li>
+    <li>主升阶段的"抱团主线"不瓦解，行情不结束；低位补涨是牛市中后期的资金溢出，不是见顶信号。</li>
+  </ul>
+  <h3>4.4 风格轮动：大小盘与价值成长的十年周期</h3>
+  <ul>
+    <li>中信证券复盘历史：<strong>大盘与小盘、质量与题材的风格轮动周期约10年</strong>；经济复苏与转型初期小盘占优，政策与资金面变化时大盘防御属性凸显。</li>
+    <li>2026年初，中证1000相对沪深300的PE-TTM比值为3.55、处于近5年98.1%分位——小盘题材超额触及极值，是大周期风格切换的警示信号。</li>
+    <li><strong>轮动速度在加快</strong>：概念板块5日涨幅排名变化均值从2018年的20增至2025年的70（增幅250%），量化参与使热点切换更快——这对量化（广度+纪律）更有利，对押注单一赛道的主观更不友好。</li>
+  </ul>
+
+  <h2>五、市场周期与策略适配：谁在什么行情里赢</h2>
+  <div class="card">
+    <svg viewBox="0 0 660 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="私募策略业绩周期时间线2019至2026">
+<text x="330.0" y="26" text-anchor="middle" font-size="15" font-weight="600" fill="#1A1B1C">策略业绩周期：2019 — 2026</text>
+<text x="330.0" y="46" text-anchor="middle" font-size="11" fill="#6B7280">主观 / 量化 交替占优，超额经历三轮"累积—回撤—修复"</text>
+<line x1="50" y1="220" x2="620" y2="220" stroke="#C9C5BA" stroke-width="2"/>
+<circle cx="90" cy="220" r="5.5" fill="#7FB8A0" stroke="#fff" stroke-width="1.5"/>
+<line x1="90" y1="220" x2="90" y2="198" stroke="#7FB8A0" stroke-width="1.5"/>
+<text x="90" y="120" text-anchor="middle" font-size="10.5" font-weight="600" fill="#7FB8A0">指数+超额共振</text>
+<text x="90" y="134" text-anchor="middle" font-size="9.5" fill="#555">量化升温</text>
+<text x="90" y="258" text-anchor="middle" font-size="10" font-weight="600" fill="#1A1B1C">2019-20</text>
+<circle cx="170" cy="220" r="5.5" fill="#F4B393" stroke="#fff" stroke-width="1.5"/>
+<line x1="170" y1="220" x2="170" y2="198" stroke="#F4B393" stroke-width="1.5"/>
+<text x="170" y="120" text-anchor="middle" font-size="10.5" font-weight="600" fill="#F4B393">转折年：茅台2月见顶</text>
+<text x="170" y="134" text-anchor="middle" font-size="9.5" fill="#555">百亿量化增至26家</text>
+<text x="170" y="258" text-anchor="middle" font-size="10" font-weight="600" fill="#1A1B1C">2021</text>
+<circle cx="250" cy="220" r="5.5" fill="#EAA7B2" stroke="#fff" stroke-width="1.5"/>
+<line x1="250" y1="220" x2="250" y2="242" stroke="#EAA7B2" stroke-width="1.5"/>
+<text x="250" y="262" text-anchor="middle" font-size="10.5" font-weight="600" fill="#C0392B">量化超额大回撤</text>
+<text x="250" y="276" text-anchor="middle" font-size="9.5" fill="#555">500指增回撤约10%</text>
+<text x="250" y="190" text-anchor="middle" font-size="10" font-weight="600" fill="#1A1B1C">2021.9</text>
+<circle cx="330" cy="220" r="5.5" fill="#7FB8A0" stroke="#fff" stroke-width="1.5"/>
+<line x1="330" y1="220" x2="330" y2="198" stroke="#7FB8A0" stroke-width="1.5"/>
+<text x="330" y="120" text-anchor="middle" font-size="10.5" font-weight="600" fill="#7FB8A0">指数弱、超额稳</text>
+<text x="330" y="134" text-anchor="middle" font-size="9.5" fill="#555">"修复期"重建信任</text>
+<text x="330" y="258" text-anchor="middle" font-size="10" font-weight="600" fill="#1A1B1C">2022-23</text>
+<circle cx="410" cy="220" r="5.5" fill="#F4B393" stroke="#fff" stroke-width="1.5"/>
+<line x1="410" y1="220" x2="410" y2="198" stroke="#F4B393" stroke-width="1.5"/>
+<text x="410" y="120" text-anchor="middle" font-size="10.5" font-weight="600" fill="#F4B393">主观大年：37.58%</text>
+<text x="410" y="134" text-anchor="middle" font-size="9.5" fill="#555">vs 量化12.81%</text>
+<text x="410" y="258" text-anchor="middle" font-size="10" font-weight="600" fill="#1A1B1C">2024</text>
+<circle cx="490" cy="220" r="5.5" fill="#7FB8A0" stroke="#fff" stroke-width="1.5"/>
+<line x1="490" y1="220" x2="490" y2="198" stroke="#7FB8A0" stroke-width="1.5"/>
+<text x="490" y="120" text-anchor="middle" font-size="10.5" font-weight="600" fill="#7FB8A0">量化大年：指增超额</text>
+<text x="490" y="134" text-anchor="middle" font-size="9.5" fill="#555">16.75%、百亿量化37.6%</text>
+<text x="490" y="258" text-anchor="middle" font-size="10" font-weight="600" fill="#1A1B1C">2025</text>
+<circle cx="558" cy="220" r="5.5" fill="#EAA7B2" stroke="#fff" stroke-width="1.5"/>
+<line x1="558" y1="220" x2="558" y2="242" stroke="#EAA7B2" stroke-width="1.5"/>
+<text x="558" y="262" text-anchor="middle" font-size="10.5" font-weight="600" fill="#C0392B">超额收敛至3.11%</text>
+<text x="558" y="276" text-anchor="middle" font-size="9.5" fill="#555">7月"贝塔阿尔法双杀"</text>
+<text x="558" y="190" text-anchor="middle" font-size="10" font-weight="600" fill="#1A1B1C">2026H1</text>
+<circle cx="615" cy="220" r="5.5" fill="#52C41A" stroke="#fff" stroke-width="1.5"/>
+<line x1="615" y1="220" x2="615" y2="198" stroke="#52C41A" stroke-width="1.5"/>
+<text x="615" y="120" text-anchor="middle" font-size="10.5" font-weight="600" fill="#52C41A">快速修复</text>
+<text x="615" y="134" text-anchor="middle" font-size="9.5" fill="#555">首周量化多头+9.09%</text>
+<text x="615" y="258" text-anchor="middle" font-size="10" font-weight="600" fill="#1A1B1C">2026.8</text>
+<text x="330.0" y="388" text-anchor="middle" font-size="11" fill="#6B7280">规律：增量普涨→量化占优；存量分化→主观占优；超额中枢长期或收敛至5%</text>
+</svg>
+    <div class="caption">2019—2026 私募策略业绩周期（示意，关键节点事件）。</div>
+  </div>
+  <ul>
+    <li><strong>2021年转折</strong>：2月茅台见顶、12月宁德见顶，两大主题行情终结，主观私募进入"难熬期"；量化崛起（百亿量化从10家增至26家，2021年平均收益19.32%），但9月量化超额也出现大回撤（500指增绝对收益回撤约10%）。</li>
+    <li><strong>2022—2023</strong>：指数机会少，量化凭稳定超额对冲指数回调，"修复期"重建信任。</li>
+    <li><strong>2024年2月</strong>：小微盘流动性危机，量化历史性超额回撤；全年主观多头37.58% vs 量化12.81%——<strong>主观跑赢量化</strong>。</li>
+    <li><strong>2025年</strong>：风格轮动快、成交活跃、中小盘强势，量化大年——百亿量化37.61% vs 百亿主观25.8%，指增超额16.75%。</li>
+    <li><strong>2026上半年</strong>：超额显著收敛（指增平均超额3.11%）；<strong>7月</strong>科技急跌引发"贝塔+阿尔法双杀"（量化多头单月均值-15.67%，部分产品跌超20%）；<strong>8月</strong>快速修复（量化多头首周均值+9.09%，约7.68%的产品收复7月失地）。</li>
+  </ul>
+  <p><strong>轮动规律</strong>：<strong>增量资金+普涨行情 → 量化占优</strong>（广度覆盖、高换手）；<strong>存量博弈+极端分化 → 主观占优</strong>（集中持仓、精准打击）。2025年8—9月主观连续两个月跑赢量化，正是板块极端分化的印证。</p>
+  <p><strong>超额的周期本质</strong>：量化超额会经历"平滑累积→信仰建立→集中回撤→信仰崩塌→修复→重建"的循环（2021.9、2024.2、2026.7三轮剧本高度相似）；"规模是超额收益的敌人"，行业超额中枢长期或收敛到5%左右。</p>
+
+  <h2>六、配置组合思路</h2>
+  <ul>
+    <li><strong>别把一种策略当全部</strong>：股票多头/指增是"进攻层"、CTA是"危机对冲+低相关层"、中性/债券是"压舱层"、多策略是"平滑层"——组合的关键是各策略低相关、盈亏不同步。</li>
+    <li><strong>买指增先看贝塔</strong>：你买到的首先是指数贝塔，其次才是管理人的阿尔法；贝塔不好时阿尔法不一定能救你。</li>
+    <li><strong>看风格暴露与容量</strong>：超额经常急涨急跌且明显偏离同行，可能是过度押注风格；规模快速扩张后超额回落，要警惕"规模诅咒"。</li>
+    <li><strong>CTA 是分散工具不是重仓品种</strong>：与股债相关性0.15—0.23，参考配置比例约13%；它对趋势和波动敏感，震荡市会磨损。</li>
+    <li><strong>敬畏周期</strong>：策略没有永远的王，只有与市场适配的策略——2021年高点买入指增曾回撤30%—40%且修复三年，用周期的眼光看配置，而不是用峰值收益线性外推。</li>
+  </ul>
+
+  <div class="disclaimer">数据说明：本文收益与业绩数据来自私募排排网、国联期货/西部证券私募指数、中金/中信/招商证券研报，及上海证券报、证券时报、中国证券报、中国基金报、财联社等公开报道，口径差异已在图表与表格注明；部分为机构统计口径。本文为行业研究笔记，不构成投资建议。</div>
+
+  <div class="sources">
+    <strong>主要参考来源</strong><br>
+    · 私募排排网：2025年各策略业绩、指增超额、备案数据<br>
+    · 西部证券《CTA策略：细分策略、适配行情和配置价值》（2026.04）<br>
+    · 中金公司《日内量价信息驱动下的CTA交易策略》（2026.06）<br>
+    · 凯丰投资《地缘局势反复，量化CTA怎样把握市场机遇》（2026.08）<br>
+    · 中信证券《A股2026年投资策略展望》（2025.12）；大小盘风格轮动研究<br>
+    · 证券时报《A股"再平衡"进行时》（2026.08）、《科技成长还是业绩为王》（2026.02）<br>
+    · 证券时报《超额收益祛魅 3万亿量化私募淘汰赛开启》（2026.08）<br>
+    · 中国证券报《量化"信仰"：从哪里来 向何处去》（2026.08）、《涨规模不涨业绩》（2026.06）<br>
+    · 中国基金报《私募"百亿俱乐部"成员再破百》（2025.10）<br>
+    · 财新《类比2020-2021，A股处于什么位置》（2025.11）
+  </div>
+</div>
+</body>
+</html>
