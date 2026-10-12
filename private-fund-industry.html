@@ -138,9 +138,14 @@
   </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
 <script>
 (function () {
+  var urls = [
+    'https://cdn.staticfile.org/echarts/5.4.3/echarts.min.js',
+    'https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js',
+    'https://unpkg.com/echarts@5.4.3/dist/echarts.min.js'
+  ];
+  var idx = 0, inited = false;
   function init(id, option) {
     var el = document.getElementById(id);
     if (!el) return;
@@ -152,8 +157,10 @@
     c.setOption(option);
     window.addEventListener('resize', function () { c.resize(); });
   }
-
-  init('chartA', {
+  function initAll() {
+    if (inited) return;
+    inited = true;
+    init('chartA', {
     backgroundColor: 'transparent',
     title: { text: '百亿私募：主观 vs 量化（2024 / 2025）', subtext: '平均收益（%）', left: 'center', textStyle: { color: '#1A1B1C', fontSize: 14, fontWeight: 600 } },
     tooltip: { trigger: 'axis', triggerOn: 'click', renderMode: 'richText', confine: true, textStyle: { fontSize: 10, lineHeight: 14 }, padding: [6, 8] },
@@ -166,8 +173,7 @@
       { name: '量化策略', type: 'bar', barWidth: 32, data: [12.81, 37.61], itemStyle: { color: '#9BBBF4' }, label: { show: true, position: 'top', fontSize: 11, color: '#555' } }
     ]
   });
-
-  init('chartB', {
+    init('chartB', {
     backgroundColor: 'transparent',
     title: { text: '中证1000指增：平均超额收益的变迁', subtext: '超额收益（%），行业统计均值口径', left: 'center', textStyle: { color: '#1A1B1C', fontSize: 14, fontWeight: 600 } },
     tooltip: { trigger: 'axis', triggerOn: 'click', renderMode: 'richText', confine: true, textStyle: { fontSize: 10, lineHeight: 14 }, padding: [6, 8] },
@@ -187,8 +193,7 @@
       }
     }]
   });
-
-  init('chartC', {
+    init('chartC', {
     backgroundColor: 'transparent',
     title: { text: '2025年各策略平均收益', subtext: '平均收益（%），多口径统计', left: 'center', textStyle: { color: '#1A1B1C', fontSize: 14, fontWeight: 600 } },
     tooltip: { trigger: 'axis', triggerOn: 'click', renderMode: 'richText', confine: true, textStyle: { fontSize: 10, lineHeight: 14 }, padding: [6, 8] },
@@ -210,6 +215,16 @@
       label: { show: true, position: 'right', fontSize: 10, color: '#555' }
     }]
   });
+  }
+  function loadNext() {
+    if (idx >= urls.length) { initAll(); return; }
+    var s = document.createElement('script');
+    s.src = urls[idx++];
+    s.onload = initAll;
+    s.onerror = loadNext;
+    document.head.appendChild(s);
+  }
+  loadNext();
 })();
 </script>
 </body>
