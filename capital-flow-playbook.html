@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A股资金流向规律与实操指南 · 简传旺</title>
+<meta name="description" content="从主力资金、北向资金、两融、ETF、新基金、产业资本六路资金入手，梳理资金流向规律、板块偏好变迁、底部回暖顺序，以及什么样的行情值得入场。" >
+<style>
+  :root {
+    --text: #1A1B1C; --text2: #6B7280; --bg: #FAF7F2; --card: #FFFFFF;
+    --line: #E4E3DD; --pine: #3E6B52; --gold: #C49A3E; --blush: #D98BA0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "PingFang SC", "Noto Serif SC", "Segoe UI", Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.75; padding: 24px 16px 48px; }
+  .wrap { max-width: 760px; margin: 0 auto; }
+  .toplink { display: inline-block; font-size: 13px; color: var(--text2); text-decoration: none; margin-bottom: 18px; }
+  h1 { font-size: 25px; font-weight: 700; line-height: 1.45; margin-bottom: 10px; }
+  .meta { font-size: 13px; color: var(--text2); margin-bottom: 28px; }
+  h2 { font-size: 19px; font-weight: 600; margin: 34px 0 12px; padding-left: 12px; border-left: 4px solid var(--pine); }
+  h3 { font-size: 15px; font-weight: 600; margin: 18px 0 8px; }
+  p { font-size: 14.5px; margin-bottom: 12px; }
+  ul { margin: 0 0 12px 20px; }
+  li { font-size: 14.5px; margin-bottom: 6px; }
+  strong { font-weight: 600; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px; margin: 14px 0; }
+  .keybox { background: rgba(62, 107, 82, 0.10); border-left: 4px solid var(--pine); padding: 12px 14px; border-radius: 0 10px 10px 0; margin: 16px 0; font-size: 14.5px; }
+  .warnbox { background: rgba(217, 139, 160, 0.10); border-left: 4px solid var(--blush); padding: 12px 14px; border-radius: 0 10px 10px 0; margin: 16px 0; font-size: 14.5px; }
+  .chart-svg svg { width: 100%; height: auto; display: block; margin: 8px 0 4px; }
+  .caption { font-size: 12px; color: var(--text2); margin-bottom: 8px; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
+  th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; }
+  th { background: #F3F0E9; font-weight: 600; }
+  .sources { font-size: 12px; color: var(--text2); margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); }
+  .sources a { color: var(--pine); word-break: break-all; }
+  .disclaimer { font-size: 12px; color: var(--text2); margin-top: 14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="toplink" href="./">← 返回主页</a>
+  <h1>A股资金流向规律与实操指南：资金偏爱哪里，行情何时值得入场</h1>
+  <div class="meta">简传旺 · 2026.10 · 资金面研究笔记 · 数据截至2026年10月上旬（Wind/Choice、证券时报、上证报、中证网、国泰海通/国金/银河证券研报等公开口径）</div>
+
+  <div class="keybox">
+    <strong>一句话结论</strong>：资金流向是<strong>验证工具，不是预测工具</strong>。单日主力净流入噪音最大，真正有用的是<strong>各路资金的"性格"（谁在买、为什么买、买多久）＋ 多路资金共振 ＋ 连续趋势</strong>。判断行情级别看"成交额是否站稳2万亿（增量/存量分界）"，判断板块偏好看"北向持仓变迁＋融资/ETF流向"，判断底部看"资金回暖顺序"，而"什么样的行情值得入场"的本质是——<strong>增量资金开始多路共振、且你不在拥挤度95%的高位接盘</strong>。
+  </div>
+
+  <h2>一、六路资金：性格、周期与可靠性</h2>
+  <table>
+    <tr><th>资金</th><th>观测口径</th><th>周期</th><th>性格</th><th>可靠性</th></tr>
+    <tr><td>主力资金</td><td>大单/特大单净流入</td><td>日度</td><td>博弈型、噪音大</td><td>单日低，连续3-5天中</td></tr>
+    <tr><td>北向资金</td><td>陆股通净买入/持仓变迁</td><td>周-季度</td><td>配置型"聪明钱"</td><td>高（累计20日/持仓）</td></tr>
+    <tr><td>两融余额</td><td>融资净买入/余额趋势</td><td>日-周</td><td>杠杆情绪温度计</td><td>中高（看趋势）</td></tr>
+    <tr><td>ETF份额</td><td>净申赎/成交放量</td><td>日-周</td><td>机构/国家队通道，越跌越买</td><td>高（逆势抄底信号）</td></tr>
+    <tr><td>新基金发行</td><td>认购份额</td><td>月</td><td>居民增量资金风向标</td><td>滞后但决定行情级别</td></tr>
+    <tr><td>产业资本</td><td>增减持/回购</td><td>月-季</td><td>内部人最诚实</td><td>高（底部特征）</td></tr>
+  </table>
+
+  <h2>二、三条被反复验证的规律</h2>
+
+  <h3>规律1：北向资金的"板块信仰"在系统性迁移</h3>
+  <p>从大金融/大消费 → 硬科技＋战略资源。2024年末北向重仓前三还是电力设备/银行/食品饮料；2025年末变为电力设备（4496亿）/电子（3870亿）/有色金属（1855亿），有色持股市值一年增长超172%，居31个行业之首；2026年一季度加仓最多的行业为电力设备/电子/通信（CPO三巨头——中际旭创、新易盛、天孚通信——的北向市值增幅明显）。</p>
+  <p><strong>硬规律：北向持股市值增加的17个行业，2025年指数平均涨幅接近35%；持股市值下降的14个行业平均涨幅不足6%。</strong>外资重仓变迁，就是中线板块偏好的最硬证据。</p>
+  <div class="card">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 250" width="100%" height="auto" font-family="PingFang SC, Microsoft YaHei, sans-serif"><text x="40" y="30" font-size="13" font-weight="600" fill="#26241F">2024年末</text><rect x="40" y="46" width="150" height="34" rx="8" fill="#3E6B52" opacity="0.9"/><text x="115" y="67" text-anchor="middle" font-size="12" font-weight="600" fill="#FFFFFF">电力设备</text><rect x="40" y="88" width="150" height="34" rx="8" fill="#3E6B52" opacity="0.9"/><text x="115" y="109" text-anchor="middle" font-size="12" font-weight="600" fill="#FFFFFF">银行</text><rect x="40" y="130" width="150" height="34" rx="8" fill="#C49A3E" opacity="0.9"/><text x="115" y="151" text-anchor="middle" font-size="12" font-weight="600" fill="#FFFFFF">食品饮料</text><text x="250" y="30" font-size="13" font-weight="600" fill="#26241F">2025年末</text><rect x="250" y="46" width="150" height="34" rx="8" fill="#3E6B52" opacity="0.9"/><text x="325" y="67" text-anchor="middle" font-size="12" font-weight="600" fill="#FFFFFF">电力设备</text><rect x="250" y="88" width="150" height="34" rx="8" fill="#3E6B52" opacity="0.9"/><text x="325" y="109" text-anchor="middle" font-size="12" font-weight="600" fill="#FFFFFF">电子</text><rect x="250" y="130" width="150" height="34" rx="8" fill="#C49A3E" opacity="0.9"/><text x="325" y="151" text-anchor="middle" font-size="12" font-weight="600" fill="#FFFFFF">有色金属</text><text x="412" y="62" font-size="11" fill="#6B7280">4496亿</text><text x="412" y="104" font-size="11" fill="#6B7280">3870亿</text><text x="412" y="146" font-size="11" fill="#6B7280">1855亿</text><text x="460" y="30" font-size="13" font-weight="600" fill="#26241F">2026Q1</text><rect x="460" y="46" width="150" height="34" rx="8" fill="#3E6B52" opacity="0.9"/><text x="535" y="67" text-anchor="middle" font-size="12" font-weight="600" fill="#FFFFFF">电力设备</text><rect x="460" y="88" width="150" height="34" rx="8" fill="#3E6B52" opacity="0.9"/><text x="535" y="109" text-anchor="middle" font-size="12" font-weight="600" fill="#FFFFFF">电子</text><rect x="460" y="130" width="150" height="34" rx="8" fill="#C49A3E" opacity="0.9"/><text x="535" y="151" text-anchor="middle" font-size="12" font-weight="600" fill="#FFFFFF">通信（CPO）</text><text x="622" y="80" font-size="11" fill="#A85C72">加仓前三：</text><text x="622" y="98" font-size="11" fill="#A85C72">电力设备/电子/通信</text><text x="40" y="196" font-size="11.5" fill="#6B7280">规律：外资从“大金融+大消费”转向“硬科技+战略资源”；北向增持行业的2025年平均涨幅≈35%，减持行业≈6%。</text><text x="0" y="0" opacity="0">__SVG_OK__</text></svg>
+    <div class="caption">北向资金重仓板块前三的变迁（2024年末→2025年末→2026Q1）。数据：Wind/Choice陆股通持股披露。</div>
+  </div>
+
+  <h3>规律2：市场底部的资金回暖有固定顺序</h3>
+  <p>国泰海通复盘历史上多轮市场底：<strong>陆股通累计20日转净流入 → 新基金未建仓规模淤积 → 公募/私募仓位见底回升 → ETF净赎回（同步市场底）→ 基金发行改善 → 融资占比与游资净买入滞后改善</strong>。而从反弹到反转，底部通常经历四个阶段：<strong>抛压减弱 → 交易资金回补 → 配置资金共振接力 → 盈利改善确认</strong>。前两步只能支撑超跌反弹，走到第三步（ETF/外资/险资/公募接力）＋ 行业扩散与盈利预期改善，才更可能由反弹转入中期反转。</p>
+  <div class="card">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 240" width="100%" height="auto" font-family="PingFang SC, Microsoft YaHei, sans-serif"><line x1="20" y1="70" x2="660" y2="70" stroke="#C49A3E" stroke-width="3"/><rect x="30" y="18" width="87" height="48" rx="8" fill="#FFFDF7" stroke="#E4E3DD"/><text x="73" y="38" text-anchor="middle" font-size="11" fill="#26241F">陆股通累计20日</text><text x="73" y="54" text-anchor="middle" font-size="11" fill="#26241F">转净流入</text><circle cx="73" cy="70" r="7" fill="#3E6B52"/><text x="73" y="70" text-anchor="middle" font-size="10" font-weight="600" fill="#fff">1</text><rect x="137" y="18" width="87" height="48" rx="8" fill="#FFFDF7" stroke="#E4E3DD"/><text x="180" y="38" text-anchor="middle" font-size="11" fill="#26241F">新基金未建仓</text><text x="180" y="54" text-anchor="middle" font-size="11" fill="#26241F">规模淤积</text><circle cx="180" cy="70" r="7" fill="#3E6B52"/><text x="180" y="70" text-anchor="middle" font-size="10" font-weight="600" fill="#fff">2</text><rect x="243" y="18" width="87" height="48" rx="8" fill="#FFFDF7" stroke="#E4E3DD"/><text x="287" y="38" text-anchor="middle" font-size="11" fill="#26241F">公募/私募</text><text x="287" y="54" text-anchor="middle" font-size="11" fill="#26241F">仓位见底回升</text><circle cx="287" cy="70" r="7" fill="#3E6B52"/><text x="287" y="70" text-anchor="middle" font-size="10" font-weight="600" fill="#fff">3</text><rect x="350" y="18" width="87" height="48" rx="8" fill="#FFFDF7" stroke="#E4E3DD"/><text x="393" y="38" text-anchor="middle" font-size="11" fill="#26241F">ETF净赎回</text><text x="393" y="54" text-anchor="middle" font-size="11" fill="#26241F">(同步市场底)</text><circle cx="393" cy="70" r="7" fill="#3E6B52"/><text x="393" y="70" text-anchor="middle" font-size="10" font-weight="600" fill="#fff">4</text><rect x="457" y="18" width="87" height="48" rx="8" fill="#FFFDF7" stroke="#E4E3DD"/><text x="500" y="38" text-anchor="middle" font-size="11" fill="#26241F">基金发行</text><text x="500" y="54" text-anchor="middle" font-size="11" fill="#26241F">改善</text><circle cx="500" cy="70" r="7" fill="#3E6B52"/><text x="500" y="70" text-anchor="middle" font-size="10" font-weight="600" fill="#fff">5</text><rect x="563" y="18" width="87" height="48" rx="8" fill="#FFFDF7" stroke="#E4E3DD"/><text x="607" y="38" text-anchor="middle" font-size="11" fill="#26241F">融资/游资</text><text x="607" y="54" text-anchor="middle" font-size="11" fill="#26241F">滞后改善</text><circle cx="607" cy="70" r="7" fill="#3E6B52"/><text x="607" y="70" text-anchor="middle" font-size="10" font-weight="600" fill="#fff">6</text><text x="20" y="120" font-size="11.5" fill="#6B7280">反弹→反转四阶段：抛压减弱 → 交易资金回补 → 配置资金共振接力（ETF/外资/险资/公募） → 盈利改善确认</text><text x="20" y="140" font-size="11.5" fill="#6B7280">前两步=超跌反弹；走到“配置资金接力”＋行业扩散，才更可能转入中期反转。</text><text x="0" y="0" opacity="0">__SVG_OK__</text></svg>
+    <div class="caption">市场底部的资金回暖顺序（历史复盘）。滞后资金（融资/游资）改善通常最晚出现，而它们的活跃往往也意味着行情已进入中段。</div>
+  </div>
+
+  <h3>规律3：2万亿成交额是"存量/增量市"的分界线</h3>
+  <p>历史上成交额突破2万亿元的交易日仅集中出现在三阶段：2015年5-6月（杠杆牛）、2024年9-12月（政策＋信心修复）、2025年2月及8月。2025年8月13-14日出现近十年首次"成交额＋两融余额双破2万亿"。<strong>2万亿以下＝存量博弈：板块快速轮动、缺乏持续主线（2025年11月成交回落到1.7万亿时，14个交易日13天主力净流出）；2万亿以上＝增量资金入场：主线才有持续性。</strong>另外一条轮动规律：当TMT等热门赛道交易拥挤度进入95%以上分位时，大概率发生高低切换（板块内轮动或资金流向低位板块）。</p>
+
+  <h3>附加规律：杠杆资金的日历效应与ETF的逆势性格</h3>
+  <ul>
+    <li><strong>国庆/春节前后</strong>：融资盘"节前收敛、节后迸发"——2010-2024年平均节前5个交易日以净流出为主，节后首个交易日平均净流入147亿元，随后约20个交易日多数保持净流入；</li>
+    <li><strong>ETF越跌越买</strong>：2026年3月23日三大指数收跌当天，超190亿元借道ETF抄底（宽基占156亿），次日反弹成交骤降16%；股票型ETF常呈"涨了卖、跌了买"的反向交易，其大幅净赎回常与市场底重合，宽基ETF放量成交本身也是资金入场的观测信号。</li>
+  </ul>
+
+  <h2>三、实操五步法</h2>
+  <ul>
+    <li><strong>① 别信单日主力净流入选股</strong>：A股经常出现"昨日净流入前二、今日净流出前二"的剧烈博弈（2026年8月17-18日电子、通信即如此）。要看连续3-5天净流入且金额放大，而非单日大单。</li>
+    <li><strong>② 按资金性格对号入座</strong>：中线板块偏好看北向持仓变迁；情绪与风险偏好看两融余额趋势；逆势抄底信号看宽基ETF净申购；基本面验证看产业资本（减持低位/回购增加）。</li>
+    <li><strong>③ 看共振，不看单一</strong>：融资余额连续增长＋北向累计20日转正＋宽基ETF净申购＋新基金发行回暖同时出现，才是大级别行情；只有一路资金，最多是结构性机会。</li>
+    <li><strong>④ 量价配合辨真假</strong>：低位放量突破（换手率放大至均值2倍以上、量比&gt;2、阳线实体饱满、站稳关键位3天）才是资金真实进场；无量突破多为假突破；高位放量（高换手＋长阴/长上影）警惕出货。</li>
+    <li><strong>⑤ 跟踪拥挤度防追高</strong>：热点板块成交占比/换手率分位到历史95%以上时，胜率快速下降，应做高低切换而不是接力；换到"资金刚流入＋估值低位＋有催化剂"的方向。</li>
+  </ul>
+
+  <h2>四、什么样的行情值得入场：信号清单</h2>
+  <div class="card">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 292" width="100%" height="auto" font-family="PingFang SC, Microsoft YaHei, sans-serif"><text x="250" y="22" font-size="12" fill="#6B7280">已现(2)</text><rect x="250" y="12" width="26" height="10" rx="5" fill="#3E6B52"/><text x="550" y="22" font-size="12" fill="#6B7280">部分/临近(1)</text><rect x="550" y="12" width="26" height="10" rx="5" fill="#C49A3E"/><text x="780" y="22" font-size="12" fill="#6B7280">未现(0)</text><rect x="780" y="12" width="26" height="10" rx="5" fill="#C9C5BC"/><text x="230" y="55" text-anchor="end" font-size="12.5" fill="#26241F">宽基ETF净申购（6日+797亿）</text><rect x="250" y="42" width="380" height="18" rx="9" fill="#F3F0E9"/><rect x="250" y="42" width="123" height="18" rx="9" fill="#3E6B52" opacity="0.85"/><rect x="377" y="42" width="123" height="18" rx="9" fill="#3E6B52" opacity="0.85"/><rect x="503" y="42" width="123" height="18" rx="9" fill="#3E6B52" opacity="0.85"/><text x="636" y="55" font-size="11.5" fill="#6B7280">已现</text><text x="230" y="91" text-anchor="end" font-size="12.5" fill="#26241F">新发ETF密集建仓上市</text><rect x="250" y="78" width="380" height="18" rx="9" fill="#F3F0E9"/><rect x="250" y="78" width="123" height="18" rx="9" fill="#3E6B52" opacity="0.85"/><rect x="377" y="78" width="123" height="18" rx="9" fill="#3E6B52" opacity="0.85"/><rect x="503" y="78" width="123" height="18" rx="9" fill="#3E6B52" opacity="0.85"/><text x="636" y="91" font-size="11.5" fill="#6B7280">已现</text><text x="230" y="127" text-anchor="end" font-size="12.5" fill="#26241F">科技主力当日回流（电子+93亿）</text><rect x="250" y="114" width="380" height="18" rx="9" fill="#F3F0E9"/><rect x="250" y="114" width="123" height="18" rx="9" fill="#3E6B52" opacity="0.85"/><rect x="377" y="114" width="123" height="18" rx="9" fill="#3E6B52" opacity="0.85"/><rect x="503" y="114" width="123" height="18" rx="9" fill="#3E6B52" opacity="0.85"/><text x="636" y="127" font-size="11.5" fill="#6B7280">已现</text><text x="230" y="163" text-anchor="end" font-size="12.5" fill="#26241F">成交额站稳2万亿</text><rect x="250" y="150" width="380" height="18" rx="9" fill="#F3F0E9"/><rect x="250" y="150" width="123" height="18" rx="9" fill="#C49A3E" opacity="0.85"/><rect x="377" y="150" width="123" height="18" rx="9" fill="#C49A3E" opacity="0.85"/><text x="636" y="163" font-size="11.5" fill="#6B7280">部分/临近</text><text x="230" y="199" text-anchor="end" font-size="12.5" fill="#26241F">两融情绪修复</text><rect x="250" y="186" width="380" height="18" rx="9" fill="#F3F0E9"/><rect x="250" y="186" width="123" height="18" rx="9" fill="#C49A3E" opacity="0.85"/><rect x="377" y="186" width="123" height="18" rx="9" fill="#C49A3E" opacity="0.85"/><text x="636" y="199" font-size="11.5" fill="#6B7280">部分/临近</text><text x="230" y="235" text-anchor="end" font-size="12.5" fill="#26241F">北向配置盘持续回流</text><rect x="250" y="222" width="380" height="18" rx="9" fill="#F3F0E9"/><rect x="250" y="222" width="123" height="18" rx="9" fill="#C9C5BC" opacity="0.85"/><text x="636" y="235" font-size="11.5" fill="#6B7280">未现</text><text x="230" y="271" text-anchor="end" font-size="12.5" fill="#26241F">新基金发行回暖</text><rect x="250" y="258" width="380" height="18" rx="9" fill="#F3F0E9"/><rect x="250" y="258" width="123" height="18" rx="9" fill="#C9C5BC" opacity="0.85"/><text x="636" y="271" font-size="11.5" fill="#6B7280">未现</text><text x="0" y="0" opacity="0">__SVG_OK__</text></svg>
+    <div class="caption">入场信号清单（2026-10-13 当前状态）：绿=已现，金=部分/临近，灰=未现。单日数据以当天收盘观测为准。</div>
+  </div>
+  <ul>
+    <li><strong>总量信号</strong>：成交额站稳2万亿以上并持续（增量市特征）；2万亿是"确认"不是"预测"——出现时行情往往已走了半程，用它确认级别，别用它找起点。</li>
+    <li><strong>资金信号（共振）</strong>：融资余额连续增长（7连增/10连增为强信号）＋北向累计20日转正＋宽基ETF持续净申购＋新基金发行回暖＋新开户激增（2025年7月单月196万户、同比+71%时点对应增量拐点）。</li>
+    <li><strong>底部特征</strong>：产业资本减持低位、回购增加；私募仓位见底；两融余额缩量出清后重新回升；ETF在底部由净赎回转为净申购。</li>
+    <li><strong>时点效应</strong>：国庆/春节假期后风险偏好回升窗口；重要财报季（三季报/年报）前后，资金从"炒预期"转向"看盈利"，景气＋资金共振的板块更稳。</li>
+    <li><strong>纪律</strong>：右侧确认（资金共振＋放量突破站稳）为主、左侧定投为辅；拒绝在拥挤度95%＋的高位重仓追热点；杠杆资金（两融）持续冲高后警惕"去杠杆"回撤。</li>
+  </ul>
+
+  <h2>五、当前时点的应用（2026-10-13）</h2>
+  <ul>
+    <li><strong>已出现的信号</strong>：9月28日-10月12日6个交易日股票型ETF净流入近800亿元（科创50ETF华夏+129亿居首）；10只新发ETF定档10月14-16日上市建仓；10月13日盘面电子(+93亿)/通信(+73亿)/军工(+40亿)主力净流入居前，午后指数翻红；概念上光模块、华为、AI算力获超70亿元净流入。</li>
+    <li><strong>尚未共振的部分</strong>：成交额未稳定站上2万亿；北向配置盘未形成持续回流（8月中下旬仍呈净流出）；新基金发行未见明显回暖；两融情绪较8月"双2万亿"高点回落。</li>
+    <li><strong>机构口径</strong>：银泰证券——四季度"价值搭台、成长唱戏"均衡格局，红利与低估值蓝筹打底、AI科技在拥挤度消化后提供弹性，单一风格极致押注性价比不高；银河证券——中枢震荡或为基准情形，等待催化剂，三季报是10月最重要的风格催化剂。</li>
+    <li><strong>综合判断</strong>：当前处于"右侧信号初现、配置资金未共振"的结构性阶段——可分批布局（红利底仓＋拥挤度消化后的科技弹性），但还不是单边重仓的增量行情。</li>
+  </ul>
+
+  <div class="warnbox"><strong>风险声明</strong>：本文为资金面研究方法与历史规律的研究笔记，不构成投资建议。资金流数据口径（主力资金为估算值）存在误差，历史规律不代表未来必然重演；A股资金博弈剧烈，单日数据噪音大，请独立判断并做好风险管理。</div>
+
+  <div class="sources">
+    <strong>主要参考来源</strong><br>
+    · 上海证券报《显著放量！资金进场了》（2026-10-13，宽基ETF放量与6日797亿净流入）<br>
+    · 证券时报《午后异动！两大板块涨停潮》（2026-10-13，Wind实时主力资金监测）<br>
+    · 国泰海通证券《复盘：市场底各类资金回暖的顺序——A股投资者行为研究系列之二》<br>
+    · 财联社《近十年首现！A股再现"双2万亿"》（2025-08-15）<br>
+    · 证券时报《北向资金2025全景图：买卖总额突破50万亿 科技及资源股持仓市值大增》（2026-01-13）<br>
+    · 上证报《北向资金2026年一季度持仓披露》（2026-04-10）<br>
+    · 中证网《A股板块轮动行情持续 机构建议关注三条线索》（2026-08-19）<br>
+    · 中证网《A股"再平衡"进行时 从赛道集中到行业均衡》（2026-08-13）<br>
+    · 新浪财经《A股又见"逆势"抄底：超190亿资金借道ETF》（2026-03-24）<br>
+    · 21财经《国庆前后融资盘变化规律及A股日历效应》（2025-09-29）<br>
+    · 证券时报《两融余额七连增 杠杆资金加码科技品种》（2026-04-17）<br>
+    · 新浪财经《各类资金边际变化一览：底部反弹的资金面特征》（2026-08-20）<br>
+    · 东方财富《换手率与量比：放量真启动还是假热闹》
+  </div>
+</div>
+</body>
+</html>
